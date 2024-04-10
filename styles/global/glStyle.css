@@ -14,8 +14,93 @@
 @import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
 @import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
 @import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+.app-header {
+  background-color: #181818;
+}
+.app-header__container {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .app-header__container {
+    padding-inline: 20px;
+  }
+}
+.app-header__container .app-header__headline {
+  padding: 8px;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 45px;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .app-header__container .app-header__headline {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .app-header__container .app-header__headline {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
 .dashboard {
   flex-grow: 1;
+  background-color: #e0ffff;
+}
+
+.app-footer {
+  background-color: #181818;
+}
+.app-footer__container {
+  padding: 40px 20px;
+}
+@media (max-width: 1024px) {
+  .app-footer__container {
+    padding-inline: 20px;
+  }
+}
+.app-footer__container .app-footer__git-link-wrapper {
+  max-width: 280px;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+.app-footer__container .app-footer__git-link-wrapper:hover {
+  transform: scale(1.1);
+}
+.app-footer__container .app-footer__git-link-wrapper:hover > .app-footer__git-link > .app-footer__git-text {
+  color: #ffec8b;
+}
+.app-footer__container .app-footer__git-link-wrapper .app-footer__git-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  text-decoration: none;
+}
+.app-footer__container .app-footer__git-link-wrapper .app-footer__git-link .app-footer__git-img {
+  width: 30px;
+  height: 30px;
+}
+.app-footer__container .app-footer__git-link-wrapper .app-footer__git-link .app-footer__git-text {
+  transition: 0.3s;
+  padding: 4px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ffffff;
+}
+@media (max-width: 864px) {
+  .app-footer__container .app-footer__git-link-wrapper .app-footer__git-link .app-footer__git-text {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 
 .global-container {
