@@ -1,9 +1,9 @@
 "use strict";
 
-import { barChart, lineChart, pieChart } from "./modules/charts.js";
+import { drawBarChart, drawLineChart, drawPieChart } from "./modules/charts.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  barChart();
-  lineChart();
-  pieChart();
+  drawBarChart();
+  drawLineChart();
+  drawPieChart();
 });
