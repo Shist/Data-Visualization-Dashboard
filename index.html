@@ -16,40 +16,42 @@
         </div>
       </header>
       <main class="dashboard">
-        <div class="dashboard__bars-filters-wrapper">
-          <h2 class="dashboard__bars-filters-headline">
+        <div class="dashboard__filters-wrapper">
+          <h2 class="dashboard__filters-headline">
             Filtering options for bar chart
           </h2>
-          <div class="dashboard__bars-filters-filter-wrapper">
-            <span class="dashboard__bars-filters-label"
+          <div class="dashboard__filters-filter-wrapper">
+            <span class="dashboard__filters-label"
               >Only posts with a title containing:</span
             >
             <input
               type="text"
-              class="dashboard__bars-filters-input"
+              class="dashboard__filters-input"
               placeholder="Specify some substring here..."
+              name="bars-filter-input-post-title"
               id="bars-filter-input-post-title"
             />
           </div>
-          <div class="dashboard__bars-filters-filter-wrapper">
-            <span class="dashboard__bars-filters-label"
+          <div class="dashboard__filters-filter-wrapper">
+            <span class="dashboard__filters-label"
               >Only posts with a body containing:</span
             >
             <input
               type="text"
-              class="dashboard__bars-filters-input"
+              class="dashboard__filters-input"
               placeholder="Specify some substring here..."
+              name="bars-filter-input-post-body"
               id="bars-filter-input-post-body"
             />
           </div>
           <button
-            class="dashboard__bar-chart-refresh-btn"
+            class="dashboard__chart-refresh-btn"
             id="reload-histogram-btn"
           >
             Reload histogram
           </button>
         </div>
-        <div class="bar-chart">
+        <div class="bar-chart bar-chart_mg-10">
           <div
             class="bar-chart__content-wrapper"
             id="bars-samples-content-wrapper"
@@ -200,6 +202,82 @@
                 <span class="bar-chart__signature">Posts count / User</span>
               </div>
               <div class="bar-chart__bars-wrapper" id="bars-wrapper"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard__filters-wrapper">
+          <h2 class="dashboard__filters-headline">
+            Filtering options for pie chart
+          </h2>
+          <div class="dashboard__filters-filter-wrapper">
+            <span class="dashboard__filters-label"
+              >Only posts with a title containing:</span
+            >
+            <input
+              type="text"
+              class="dashboard__filters-input"
+              placeholder="Specify some substring here..."
+              name="pie-chart-filter-input-post-title"
+              id="pie-chart-filter-input-post-title"
+            />
+          </div>
+          <div class="dashboard__filters-filter-wrapper">
+            <span class="dashboard__filters-label"
+              >Only posts with a body containing:</span
+            >
+            <input
+              type="text"
+              class="dashboard__filters-input"
+              placeholder="Specify some substring here..."
+              name="pie-chart-filter-input-post-body"
+              id="pie-chart-filter-input-post-body"
+            />
+          </div>
+          <button
+            class="dashboard__chart-refresh-btn"
+            id="reload-pie-chart-btn"
+          >
+            Reload pie chart
+          </button>
+        </div>
+        <div class="pie-chart">
+          <div
+            class="pie-chart__content-wrapper"
+            id="pie-chart-main-content-wrapper"
+          >
+            <h2 class="pie-chart__headline">
+              Percentage distribution of posts among users
+            </h2>
+            <div class="pie-chart__diagram-legend-wrapper">
+              <canvas
+                width="400"
+                height="400"
+                class="pie-chart__diagram"
+                id="pie-chart-diagram"
+              ></canvas>
+              <div class="pie-chart__legend-wrapper">
+                <div class="pie-chart__color-label-wrapper">
+                  <div
+                    class="pie-chart__color-block"
+                    style="background-color: red"
+                  ></div>
+                  <span class="pie-chart__color-label">Test One</span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div
+                    class="pie-chart__color-block"
+                    style="background-color: green"
+                  ></div>
+                  <span class="pie-chart__color-label">Test Two</span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div
+                    class="pie-chart__color-block"
+                    style="background-color: blue"
+                  ></div>
+                  <span class="pie-chart__color-label">Test Three</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
