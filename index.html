@@ -21,12 +21,23 @@
             Filtering options for bar chart
           </h2>
           <div class="dashboard__bars-filters-filter-wrapper">
-            <span class="dashboard__bars-filters-post-body-label"
+            <span class="dashboard__bars-filters-label"
+              >Only posts with a title containing:</span
+            >
+            <input
+              type="text"
+              class="dashboard__bars-filters-input"
+              placeholder="Specify some substring here..."
+              id="bars-filter-input-post-title"
+            />
+          </div>
+          <div class="dashboard__bars-filters-filter-wrapper">
+            <span class="dashboard__bars-filters-label"
               >Only posts with a body containing:</span
             >
             <input
               type="text"
-              class="dashboard__bars-filters-post-body-input"
+              class="dashboard__bars-filters-input"
               placeholder="Specify some substring here..."
               id="bars-filter-input-post-body"
             />

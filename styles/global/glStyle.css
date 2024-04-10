@@ -26,7 +26,7 @@
 @import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
 @import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
 @import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -39,7 +39,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 
@@ -54,7 +54,7 @@
     opacity: 1;
   }
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -67,7 +67,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 
@@ -117,7 +117,7 @@
   }
 }
 
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -130,7 +130,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 
@@ -145,7 +145,7 @@
     opacity: 1;
   }
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -158,7 +158,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 
@@ -382,7 +382,7 @@
   color: #ffec8b;
 }
 
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -395,7 +395,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 
@@ -410,7 +410,7 @@
     opacity: 1;
   }
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -423,7 +423,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 
@@ -440,8 +440,13 @@
 }
 .dashboard {
   flex-grow: 1;
-  padding: 10px;
+  padding: 20px;
   background-color: #e0ffff;
+}
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 10px;
+  }
 }
 .dashboard__bars-filters-wrapper {
   margin-bottom: 10px;
@@ -471,7 +476,7 @@
   align-items: flex-start;
   row-gap: 10px;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-label {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-label {
   padding: 4px;
   font-family: "Roboto";
   font-weight: 400;
@@ -501,7 +506,7 @@
   color: #ffec8b;
 }
 
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -514,7 +519,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-post-body-input::placeholder {
+.dashboard__bars-filters-wrapper .dashboard__bars-filters-filter-wrapper .dashboard__bars-filters-input::placeholder {
   color: #777777;
 }
 

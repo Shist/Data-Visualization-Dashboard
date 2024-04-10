@@ -29,12 +29,17 @@ function drawBarChart() {
       const container = document.querySelector("#bars-wrapper");
       const topBarSign = document.querySelector("#bars-top-bar-sign");
       const middleBarSign = document.querySelector("#bars-middle-bar-sign");
-      const postBodySubstr = document.querySelector(
+      const postTitleSubstrInput = document.querySelector(
+        "#bars-filter-input-post-title"
+      );
+      const postBodySubstrInput = document.querySelector(
         "#bars-filter-input-post-body"
       );
       const users = dataArr[0];
-      const posts = dataArr[1].filter((post) =>
-        post.body.includes(postBodySubstr.value)
+      const posts = dataArr[1].filter(
+        (post) =>
+          post.title.includes(postTitleSubstrInput.value) &&
+          post.body.includes(postBodySubstrInput.value)
       );
       const chartData = {};
       let maxPostCount = 0;

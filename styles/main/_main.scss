@@ -6,8 +6,11 @@
 
 .dashboard {
   flex-grow: 1;
-  padding: 10px;
+  padding: 20px;
   background-color: $color-bg-light;
+  @media (max-width: $phone-l) {
+    padding: 10px;
+  }
   &__bars-filters-wrapper {
     margin-bottom: 10px;
     padding: 10px;
@@ -27,10 +30,10 @@
       flex-direction: column;
       align-items: flex-start;
       row-gap: 10px;
-      .dashboard__bars-filters-post-body-label {
+      .dashboard__bars-filters-label {
         @include default-text(20px, 20px, $color-black);
       }
-      .dashboard__bars-filters-post-body-input {
+      .dashboard__bars-filters-input {
         @extend %default-input;
       }
     }
