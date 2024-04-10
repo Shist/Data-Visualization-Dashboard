@@ -1,0 +1,23 @@
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+
+// Fonts
+$font-roboto: "Roboto";
+
+// Main colors
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Default checkpoints for adaptive
+$pc-l: 1440px;
+$pc-m: 1400px;
+$pc-s: 1280px;
+$laptop-l: 1024px;
+$laptop-m: 960px;
+$laptop-s: 864px;
+$tablet-l: 768px;
+$tablet-m: 640px;
+$tablet-s: 576px;
+$phone-l: 480px;
+$phone-m: 360px;
+$phone-s: 320px;

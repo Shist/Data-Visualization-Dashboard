@@ -1,0 +1,19 @@
+{
+  "name": "data-visualization-dashboard",
+  "version": "1.0.0",
+  "description": "This is web application that fetches data from JSONPlaceholder and displays it in a user-friendly dashboard using only vanilla JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shist/Data-Visualization-Dashboard.git"
+  },
+  "author": "Pavel Zhukouski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shist/Data-Visualization-Dashboard/issues"
+  },
+  "homepage": "https://github.com/Shist/Data-Visualization-Dashboard#readme"
+}

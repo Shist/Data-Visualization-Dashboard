@@ -1,0 +1,28 @@
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+@import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
+@import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
+.dashboard {
+  flex-grow: 1;
+}
+
+.global-container {
+  min-height: 100vh;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=glStyle.css.map */

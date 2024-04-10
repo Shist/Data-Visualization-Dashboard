@@ -1,0 +1,15 @@
+@import "./vars";
+@import "./templates";
+@import "../header";
+@import "../main";
+@import "../footer";
+
+// Global container of whole page
+.global-container {
+  min-height: 100vh;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
