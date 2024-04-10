@@ -8,4 +8,35 @@
   flex-grow: 1;
   padding: 10px;
   background-color: $color-bg-light;
+  &__bars-filters-wrapper {
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    .dashboard__bars-filters-headline {
+      @include default-headline(28px, 28px, $color-black);
+      @media (max-width: $phone-l) {
+        font-size: 22px;
+        line-height: 22px;
+      }
+    }
+    .dashboard__bars-filters-filter-wrapper {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 10px;
+      .dashboard__bars-filters-post-body-label {
+        @include default-text(18px, 18px, $color-black);
+      }
+      .dashboard__bars-filters-post-body-input {
+        @extend %default-input;
+      }
+    }
+    .dashboard__bar-chart-refresh-btn {
+      margin-left: 10px;
+      @include default-btn(300px, $color-white, $color-bg-dark);
+    }
+  }
 }

@@ -29,8 +29,13 @@ function drawBarChart() {
       const container = document.querySelector("#bars-wrapper");
       const topBarSign = document.querySelector("#bars-top-bar-sign");
       const middleBarSign = document.querySelector("#bars-middle-bar-sign");
+      const postBodySubstr = document.querySelector(
+        "#bars-filter-input-post-body"
+      );
       const users = dataArr[0];
-      const posts = dataArr[1];
+      const posts = dataArr[1].filter((post) =>
+        post.body.includes(postBodySubstr.value)
+      );
       const chartData = {};
       let maxPostCount = 0;
 
@@ -47,6 +52,8 @@ function drawBarChart() {
 
       topBarSign.textContent = maxPostCount;
       middleBarSign.textContent = +(maxPostCount / 2).toFixed(1);
+
+      container.innerHTML = "";
 
       Object.values(chartData).forEach(({ name, postsCount }) => {
         const barHeightRatio = (postsCount / maxPostCount) * 100;

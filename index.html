@@ -16,6 +16,28 @@
         </div>
       </header>
       <main class="dashboard">
+        <div class="dashboard__bars-filters-wrapper">
+          <h2 class="dashboard__bars-filters-headline">
+            Filtering options for bar chart
+          </h2>
+          <div class="dashboard__bars-filters-filter-wrapper">
+            <span class="dashboard__bars-filters-post-body-label"
+              >Specify substring in the body of the post:</span
+            >
+            <input
+              type="text"
+              class="dashboard__bars-filters-post-body-input"
+              placeholder="Type some post substring here..."
+              id="bars-filter-input-post-body"
+            />
+          </div>
+          <button
+            class="dashboard__bar-chart-refresh-btn"
+            id="reload-histogram-btn"
+          >
+            Reload histogram
+          </button>
+        </div>
         <div class="bar-chart">
           <div
             class="bar-chart__content-wrapper"
@@ -141,9 +163,6 @@
               An error occurred while loading data for the histogram
             </h2>
             <span class="bar-chart__error-msg" id="bars-error-msg-span"></span>
-            <button class="bar-chart__try-again-btn" id="bars-try-again-btn">
-              Try again
-            </button>
           </div>
           <div
             class="bar-chart__content-wrapper hidden-element"
