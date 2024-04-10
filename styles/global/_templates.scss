@@ -19,3 +19,48 @@
   line-height: $line-height;
   color: $text-color;
 }
+
+// Default settings of buttons, you only need to choose max-width, text-color and bg-color
+@mixin default-btn($max-width, $text-color, $bg-color) {
+  max-width: $max-width;
+  width: 100%;
+  padding: 20px;
+  font-family: $font-roboto;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: $text-color;
+  background-color: $bg-color;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.1);
+    color: $color-link-active;
+  }
+}
+
+// Simple pulse animation for @sample mixin
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// This mixin is needed for those gray blocks that appearing while some data is fetching
+@mixin sample($max-width, $height, $border-radius) {
+  max-width: $max-width;
+  width: 100%;
+  height: $height;
+  background-color: $color-sample;
+  border-radius: $border-radius;
+  animation: pulse 1.5s ease-in-out 0.5s infinite;
+}

@@ -17,21 +17,160 @@
       </header>
       <main class="dashboard">
         <div class="bar-chart">
-          <h2 class="bar-chart__headline">Number of posts per user</h2>
-          <div class="bar-chart__signs-bars-wrapper">
-            <div class="bar-chart__signatures-wrapper">
-              <div class="bar-chart__signatures-values-wrapper">
-                <span class="bar-chart__signature-value" id="top-bar-sign">
-                  ?
-                </span>
-                <span class="bar-chart__signature-value" id="middle-bar-sign">
-                  ?
-                </span>
-                <span class="bar-chart__signature-value">0</span>
+          <div
+            class="bar-chart__content-wrapper"
+            id="bars-samples-content-wrapper"
+          >
+            <div class="bar-chart__headline-sample"></div>
+            <div class="bar-chart__signs-bars-wrapper">
+              <div
+                class="bar-chart__signatures-wrapper bar-chart__signatures-wrapper_sample"
+              >
+                <div class="bar-chart__signatures-values-wrapper">
+                  <span class="bar-chart__signature-value-sample"> </span>
+                  <span class="bar-chart__signature-value-sample"> </span>
+                  <span class="bar-chart__signature-value-sample"></span>
+                </div>
+                <span class="bar-chart__signature-sample"></span>
               </div>
-              <span class="bar-chart__signature">Posts count / User</span>
+              <div class="bar-chart__bars-wrapper">
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div class="bar-chart__bar-sample"></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_six"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_eight"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_eight"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_six"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div class="bar-chart__bar-sample"></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+              </div>
             </div>
-            <div class="bar-chart__bars-wrapper"></div>
+          </div>
+          <div
+            class="bar-chart__error-msg-wrapper hidden-element"
+            id="bars-error-msg-wrapper"
+          >
+            <h2 class="bar-chart__error-msg-headline">
+              An error occurred while loading data for the histogram
+            </h2>
+            <span class="bar-chart__error-msg" id="bars-error-msg-span"></span>
+            <button class="bar-chart__try-again-btn" id="bars-try-again-btn">
+              Try again
+            </button>
+          </div>
+          <div
+            class="bar-chart__content-wrapper hidden-element"
+            id="bars-main-content-wrapper"
+          >
+            <h2 class="bar-chart__headline">Number of posts per user</h2>
+            <div class="bar-chart__signs-bars-wrapper">
+              <div class="bar-chart__signatures-wrapper">
+                <div class="bar-chart__signatures-values-wrapper">
+                  <span
+                    class="bar-chart__signature-value"
+                    id="bars-top-bar-sign"
+                  >
+                    ?
+                  </span>
+                  <span
+                    class="bar-chart__signature-value"
+                    id="bars-middle-bar-sign"
+                  >
+                    ?
+                  </span>
+                  <span class="bar-chart__signature-value">0</span>
+                </div>
+                <span class="bar-chart__signature">Posts count / User</span>
+              </div>
+              <div class="bar-chart__bars-wrapper" id="bars-wrapper"></div>
+            </div>
           </div>
         </div>
       </main>

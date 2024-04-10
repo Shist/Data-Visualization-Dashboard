@@ -9,13 +9,26 @@ const COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
 function drawBarChart() {
   const promiseUsers = getResource(USERS_URL);
   const promisePosts = getResource(POSTS_URL);
+  const mainWrapper = document.querySelector("#bars-main-content-wrapper");
+  const samplesWrapper = document.querySelector(
+    "#bars-samples-content-wrapper"
+  );
+  const errorMsgWrapper = document.querySelector("#bars-error-msg-wrapper");
 
-  // set some spinner
+  mainWrapper.classList.remove("appeared-block");
+  mainWrapper.classList.add("hidden-element");
+  errorMsgWrapper.classList.remove("appeared-flex");
+  errorMsgWrapper.classList.add("hidden-element");
+  samplesWrapper.classList.remove("hidden-element");
+  samplesWrapper.classList.add("appeared-block");
   Promise.all([promiseUsers, promisePosts])
     .then((dataArr) => {
-      const container = document.querySelector(".bar-chart__bars-wrapper");
-      const topBarSign = document.querySelector("#top-bar-sign");
-      const middleBarSign = document.querySelector("#middle-bar-sign");
+      mainWrapper.classList.remove("hidden-element");
+      mainWrapper.classList.add("appeared-block");
+
+      const container = document.querySelector("#bars-wrapper");
+      const topBarSign = document.querySelector("#bars-top-bar-sign");
+      const middleBarSign = document.querySelector("#bars-middle-bar-sign");
       const users = dataArr[0];
       const posts = dataArr[1];
       const chartData = {};
@@ -49,10 +62,13 @@ function drawBarChart() {
       });
     })
     .catch((e) => {
-      // display some error
+      errorMsgWrapper.classList.remove("hidden-element");
+      errorMsgWrapper.classList.add("appeared-flex");
+      document.querySelector("#bars-error-msg-span").textContent = e.message;
     })
     .finally(() => {
-      // Remove the spinner
+      samplesWrapper.classList.remove("appeared-block");
+      samplesWrapper.classList.add("hidden-element");
     });
 }
 

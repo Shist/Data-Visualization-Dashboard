@@ -1,8 +1,8 @@
 @import "../global/vars";
 @import "../global/templates";
-@import "./barChart/barChart";
-@import "./lineChart/lineChart";
-@import "./pieChart/pieChart";
+@import "./barChart";
+@import "./lineChart";
+@import "./pieChart";
 
 .dashboard {
   flex-grow: 1;
