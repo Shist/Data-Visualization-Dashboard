@@ -28,7 +28,7 @@
       align-items: flex-start;
       row-gap: 10px;
       .dashboard__bars-filters-post-body-label {
-        @include default-text(18px, 18px, $color-black);
+        @include default-text(20px, 20px, $color-black);
       }
       .dashboard__bars-filters-post-body-input {
         @extend %default-input;
