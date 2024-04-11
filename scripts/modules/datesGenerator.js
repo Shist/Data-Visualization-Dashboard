@@ -14,6 +14,4 @@ function getDatesArr(N, startDate, endDate) {
   return datesArr;
 }
 
-console.log(getDatesArr(10, new Date("2023-04-01"), new Date("2024-03-01")));
-
 export default getDatesArr;
