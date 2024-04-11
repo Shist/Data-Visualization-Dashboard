@@ -24,17 +24,28 @@
         line-height: 22px;
       }
     }
-    .dashboard__filters-filter-wrapper {
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      row-gap: 10px;
-      .dashboard__filters-label {
-        @include default-text(20px, 20px, $color-black);
+    .dashboard__filters-fields-wrapper {
+      display: grid;
+      column-gap: 20px;
+      row-gap: 5px;
+      grid-template-columns: 400px 400px;
+      grid-template-rows: 1fr 1fr;
+      @media (max-width: $laptop-s) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
       }
-      .dashboard__filters-input {
-        @extend %default-input;
+      .dashboard__filters-filter-wrapper {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 10px;
+        .dashboard__filters-label {
+          @include default-text(20px, 20px, $color-black);
+        }
+        .dashboard__filters-input {
+          @extend %default-input;
+        }
       }
     }
     .dashboard__chart-refresh-btn {

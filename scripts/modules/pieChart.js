@@ -28,13 +28,23 @@ function drawPieChart() {
       mainWrapper.classList.remove("hidden-element");
       mainWrapper.classList.add("appeared-block");
 
+      const userUsernameSubstrInput = document.querySelector(
+        "#pie-chart-filter-input-user-username"
+      );
+      const userEmailSubstrInput = document.querySelector(
+        "#pie-chart-filter-input-user-email"
+      );
       const postTitleSubstrInput = document.querySelector(
         "#pie-chart-filter-input-post-title"
       );
       const postBodySubstrInput = document.querySelector(
         "#pie-chart-filter-input-post-body"
       );
-      const users = dataArr[0];
+      const users = dataArr[0].filter(
+        (user) =>
+          user.username.includes(userUsernameSubstrInput.value) &&
+          user.email.includes(userEmailSubstrInput.value)
+      );
       const posts = dataArr[1].filter(
         (post) =>
           post.title.includes(postTitleSubstrInput.value) &&
@@ -48,7 +58,9 @@ function drawPieChart() {
       });
       posts.forEach((post) => {
         const currUserData = chartData[post.userId];
-        currUserData.postsCount++;
+        if (currUserData) {
+          currUserData.postsCount++;
+        }
       });
 
       const legendWrapper = document.querySelector("#pie-chart-legend-wrapper");
@@ -66,8 +78,12 @@ function drawPieChart() {
       ctx.closePath();
       ctx.stroke();
 
+      const totalPostsCount = Object.values(chartData)
+        .map((userObj) => userObj.postsCount)
+        .reduce((prevCount, nextCount) => prevCount + nextCount);
+
       Object.values(chartData).forEach(({ name, postsCount }) => {
-        const sliceAngle = (postsCount / posts.length) * 2 * Math.PI;
+        const sliceAngle = (postsCount / totalPostsCount) * 2 * Math.PI;
         const endAngle = startAngle + sliceAngle;
         const newColor = colorsArr.pop();
 

@@ -28,13 +28,23 @@ function drawBarChart() {
       const container = document.querySelector("#bars-wrapper");
       const topBarSign = document.querySelector("#bars-top-bar-sign");
       const middleBarSign = document.querySelector("#bars-middle-bar-sign");
+      const userUsernameSubstrInput = document.querySelector(
+        "#bars-filter-input-user-username"
+      );
+      const userEmailSubstrInput = document.querySelector(
+        "#bars-filter-input-user-email"
+      );
       const postTitleSubstrInput = document.querySelector(
         "#bars-filter-input-post-title"
       );
       const postBodySubstrInput = document.querySelector(
         "#bars-filter-input-post-body"
       );
-      const users = dataArr[0];
+      const users = dataArr[0].filter(
+        (user) =>
+          user.username.includes(userUsernameSubstrInput.value) &&
+          user.email.includes(userEmailSubstrInput.value)
+      );
       const posts = dataArr[1].filter(
         (post) =>
           post.title.includes(postTitleSubstrInput.value) &&
@@ -48,9 +58,11 @@ function drawBarChart() {
       });
       posts.forEach((post) => {
         const currUserData = chartData[post.userId];
-        currUserData.postsCount++;
-        if (currUserData.postsCount > maxPostCount) {
-          maxPostCount = currUserData.postsCount;
+        if (currUserData) {
+          currUserData.postsCount++;
+          if (currUserData.postsCount > maxPostCount) {
+            maxPostCount = currUserData.postsCount;
+          }
         }
       });
 

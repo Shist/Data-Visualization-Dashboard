@@ -26,7 +26,7 @@
 @import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
 @import "../../assets/fonts/Roboto-Bold/font-roboto-bold.css";
 @import "../../assets/fonts/Roboto-Regular/font-roboto-regular.css";
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -39,7 +39,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
@@ -54,7 +54,7 @@
     opacity: 1;
   }
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -67,7 +67,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
@@ -117,7 +117,7 @@
   }
 }
 
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -130,7 +130,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
@@ -145,7 +145,7 @@
     opacity: 1;
   }
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -158,7 +158,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
@@ -330,7 +330,7 @@
   align-self: center;
 }
 
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -343,7 +343,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
@@ -358,7 +358,7 @@
     opacity: 1;
   }
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -371,7 +371,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
@@ -520,14 +520,27 @@
     line-height: 22px;
   }
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 5px;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: 1fr 1fr;
+}
+@media (max-width: 864px) {
+  .dashboard__filters-wrapper .dashboard__filters-fields-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper {
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   row-gap: 10px;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-label {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-label {
   padding: 4px;
   font-family: "Roboto";
   font-weight: 400;
@@ -592,7 +605,7 @@
   word-break: break-word;
 }
 
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input {
   padding-inline: 20px;
   max-width: 300px;
   width: 100%;
@@ -605,7 +618,7 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
-.dashboard__filters-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
+.dashboard__filters-wrapper .dashboard__filters-fields-wrapper .dashboard__filters-filter-wrapper .dashboard__filters-input::placeholder {
   color: #777777;
 }
 
