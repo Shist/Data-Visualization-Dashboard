@@ -236,6 +236,59 @@
         </div>
         <div class="dashboard__filters-wrapper">
           <h2 class="dashboard__filters-headline">
+            Filtering options for line chart
+          </h2>
+          <div
+            class="dashboard__filters-fields-wrapper dashboard__filters-fields-wrapper_comments"
+          >
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only comments with email containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="line-chart-filter-input-comment-email"
+                id="line-chart-filter-input-comment-email"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only comments with body containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="line-chart-filter-input-comment-body"
+                id="line-chart-filter-input-comment-body"
+              />
+            </div>
+          </div>
+          <button
+            class="dashboard__chart-refresh-btn"
+            id="reload-line-chart-btn"
+          >
+            Reload pie chart
+          </button>
+        </div>
+        <div class="line-chart">
+          <div
+            class="line-chart__content-wrapper"
+            id="line-chart-main-content-wrapper"
+          >
+            <h2 class="line-chart__headline">Number of comments per month</h2>
+            <canvas
+              width="1000"
+              height="400"
+              class="line-chart__diagram"
+              id="line-chart-graph"
+            ></canvas>
+          </div>
+        </div>
+        <div class="dashboard__filters-wrapper">
+          <h2 class="dashboard__filters-headline">
             Filtering options for pie chart
           </h2>
           <div class="dashboard__filters-fields-wrapper">
