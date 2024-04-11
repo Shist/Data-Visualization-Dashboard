@@ -15,6 +15,18 @@
         line-height: 22px;
       }
     }
+    .pie-chart__headline-sample {
+      @include sample(600px, 44px, 15px);
+      margin-bottom: 10px;
+      @media (max-width: $phone-l) {
+        max-width: 270px;
+        height: 38px;
+      }
+    }
+    .pie-chart__diagram-sample {
+      @include sample(400px, 400px, 100%);
+      min-width: 400px;
+    }
     .pie-chart__diagram-legend-wrapper {
       display: flex;
       column-gap: 30px;
@@ -25,6 +37,7 @@
         height: 400px;
         display: flex;
         flex-direction: column;
+        row-gap: 5px;
         overflow-y: scroll;
         .pie-chart__color-label-wrapper {
           display: flex;
@@ -35,11 +48,23 @@
             height: 10px;
             min-width: 10px;
           }
+          .pie-chart__color-block-sample {
+            @include sample(10px, 10px, 0);
+          }
           .pie-chart__color-label {
             @include default-text(18px, 18px, $color-black);
             overflow: hidden;
             text-overflow: ellipsis;
             text-wrap: nowrap;
+          }
+          .pie-chart__color-label-sample {
+            @include sample(150px, 26px, 15px);
+            &_small {
+              max-width: 120px;
+            }
+            &_big {
+              max-width: 170px;
+            }
           }
         }
       }

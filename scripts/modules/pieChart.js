@@ -18,10 +18,19 @@ function drawPieChart() {
   const promiseUsers = getResource(USERS_URL);
   const promisePosts = getResource(POSTS_URL);
   const mainWrapper = document.querySelector("#pie-chart-main-content-wrapper");
+  const samplesWrapper = document.querySelector(
+    "#pie-chart-samples-content-wrapper"
+  );
+  const errorMsgWrapper = document.querySelector(
+    "#pie-chart-error-msg-wrapper"
+  );
 
-  // remove main block
-  // remove error
-  // show sample
+  mainWrapper.classList.remove("appeared-block");
+  mainWrapper.classList.add("hidden-element");
+  errorMsgWrapper.classList.remove("appeared-flex");
+  errorMsgWrapper.classList.add("hidden-element");
+  samplesWrapper.classList.remove("hidden-element");
+  samplesWrapper.classList.add("appeared-block");
   Promise.all([promiseUsers, promisePosts])
     .then((dataArr) => {
       mainWrapper.classList.remove("hidden-element");
@@ -90,11 +99,14 @@ function drawPieChart() {
       });
     })
     .catch((e) => {
-      // show error block
-      // set error msg
+      errorMsgWrapper.classList.remove("hidden-element");
+      errorMsgWrapper.classList.add("appeared-flex");
+      document.querySelector("#pie-chart-error-msg-span").textContent =
+        e.message;
     })
     .finally(() => {
-      // remove sample
+      samplesWrapper.classList.remove("appeared-block");
+      samplesWrapper.classList.add("hidden-element");
     });
 }
 
