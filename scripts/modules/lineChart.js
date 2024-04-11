@@ -17,8 +17,38 @@ function countCommentsByMonth(comments) {
 }
 
 function drawLineChart() {
+  const mainWrapper = document.querySelector(
+    "#line-chart-main-content-wrapper"
+  );
+  const samplesWrapper = document.querySelector(
+    "#line-chart-samples-content-wrapper"
+  );
+  const errorMsgWrapper = document.querySelector(
+    "#line-chart-error-msg-wrapper"
+  );
+
+  mainWrapper.classList.remove("appeared-block");
+  mainWrapper.classList.add("hidden-element");
+  errorMsgWrapper.classList.remove("appeared-flex");
+  errorMsgWrapper.classList.add("hidden-element");
+  samplesWrapper.classList.remove("hidden-element");
+  samplesWrapper.classList.add("appeared-block");
   getResource(COMMENTS_URL)
-    .then((comments) => {
+    .then((allComments) => {
+      mainWrapper.classList.remove("hidden-element");
+      mainWrapper.classList.add("appeared-block");
+
+      const commentEmailSubstrInput = document.querySelector(
+        "#line-chart-filter-input-comment-email"
+      );
+      const commentBodySubstrInput = document.querySelector(
+        "#line-chart-filter-input-comment-body"
+      );
+      const comments = allComments.filter(
+        (user) =>
+          user.email.includes(commentEmailSubstrInput.value) &&
+          user.body.includes(commentBodySubstrInput.value)
+      );
       const randomDatesArr = getDatesArr(
         comments.length,
         new Date("2023-04-01"),
@@ -99,11 +129,14 @@ function drawLineChart() {
       ctx.stroke();
     })
     .catch((e) => {
-      // show error block
-      // set error msg
+      errorMsgWrapper.classList.remove("hidden-element");
+      errorMsgWrapper.classList.add("appeared-flex");
+      document.querySelector("#line-chart-error-msg-span").textContent =
+        e.message;
     })
     .finally(() => {
-      // remove sample
+      samplesWrapper.classList.remove("appeared-block");
+      samplesWrapper.classList.add("hidden-element");
     });
 }
 
