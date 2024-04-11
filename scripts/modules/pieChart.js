@@ -15,47 +15,73 @@ function getRandomColor() {
 }
 
 function drawPieChart() {
-  // Sample data (replace with your actual data)
-  const users = ["User1", "User2", "User3"];
-  const posts = ["User1", "User1", "User2", "User2", "User2", "User3"];
+  const promiseUsers = getResource(USERS_URL);
+  const promisePosts = getResource(POSTS_URL);
+  const mainWrapper = document.querySelector("#pie-chart-main-content-wrapper");
 
-  // Calculate the number of posts for each user
-  const postCounts = {};
-  posts.forEach((post) => {
-    postCounts[post] = (postCounts[post] || 0) + 1;
-  });
+  // remove main block
+  // remove error
+  // show sample
+  Promise.all([promiseUsers, promisePosts])
+    .then((dataArr) => {
+      mainWrapper.classList.remove("hidden-element");
+      mainWrapper.classList.add("appeared-block");
 
-  // Calculate the total number of posts
-  const totalPosts = posts.length;
+      const postTitleSubstrInput = document.querySelector(
+        "#pie-chart-filter-input-post-title"
+      );
+      const postBodySubstrInput = document.querySelector(
+        "#pie-chart-filter-input-post-body"
+      );
+      const users = dataArr[0];
+      const posts = dataArr[1].filter(
+        (post) =>
+          post.title.includes(postTitleSubstrInput.value) &&
+          post.body.includes(postBodySubstrInput.value)
+      );
+      const chartData = {};
 
-  // Get the canvas element
-  const canvas = document.querySelector("#pie-chart-diagram");
-  const ctx = canvas.getContext("2d");
+      users.forEach((user) => {
+        chartData[user.id] = { name: user.username, postsCount: 0 };
+      });
+      posts.forEach((post) => {
+        const currUserData = chartData[post.userId];
+        currUserData.postsCount++;
+      });
 
-  // Pie chart settings
-  const centerX = canvas.width / 2;
-  const centerY = canvas.height / 2;
-  const radius = Math.min(canvas.width, canvas.height) / 2;
-  let startAngle = 0;
-  // Draw each slice of the pie chart
-  Object.values(postCounts).forEach((count) => {
-    const sliceAngle = (count / totalPosts) * 2 * Math.PI;
-    const endAngle = startAngle + sliceAngle;
+      const canvas = document.querySelector("#pie-chart-diagram");
+      const ctx = canvas.getContext("2d");
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = Math.min(canvas.width, canvas.height) / 2;
+      let startAngle = 0;
 
-    ctx.beginPath();
-    ctx.moveTo(centerX, centerY);
-    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-    ctx.fillStyle = getRandomColor(); // Helper function to generate random colors
-    ctx.fill();
+      Object.values(chartData).forEach(({ name, postsCount }) => {
+        const sliceAngle = (postsCount / posts.length) * 2 * Math.PI;
+        const endAngle = startAngle + sliceAngle;
 
-    // Draw legend
-    // ctx.rect(canvas.width - 100, centerY - 20 - margin, 10, 10);
-    // ctx.fill();
-    // ctx.font = "12px Roboto";
-    // ctx.fillText(count + " posts", canvas.width - 85, centerY - 10 - margin);
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+        ctx.fillStyle = getRandomColor();
+        ctx.fill();
 
-    startAngle = endAngle;
-  });
+        // Draw legend
+        // ctx.rect(canvas.width - 100, centerY - 20 - margin, 10, 10);
+        // ctx.fill();
+        // ctx.font = "12px Roboto";
+        // ctx.fillText(count + " posts", canvas.width - 85, centerY - 10 - margin);
+
+        startAngle = endAngle;
+      });
+    })
+    .catch((e) => {
+      // show error block
+      // set error msg
+    })
+    .finally(() => {
+      // remove sample
+    });
 }
 
 export default drawPieChart;

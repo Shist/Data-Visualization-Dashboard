@@ -17,14 +17,11 @@
     }
     .pie-chart__diagram-legend-wrapper {
       display: flex;
-      column-gap: 10px;
+      column-gap: 30px;
       overflow-x: scroll;
-      .pie-chart__diagram {
-        border: 2px solid $color-black;
-      }
       .pie-chart__legend-wrapper {
         flex-grow: 1;
-        min-width: 400px;
+        min-width: 300px;
         height: 400px;
         display: flex;
         flex-direction: column;
@@ -36,9 +33,13 @@
           .pie-chart__color-block {
             width: 10px;
             height: 10px;
+            min-width: 10px;
           }
           .pie-chart__color-label {
             @include default-text(18px, 18px, $color-black);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
           }
         }
       }

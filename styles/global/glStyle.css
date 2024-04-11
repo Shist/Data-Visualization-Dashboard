@@ -464,15 +464,12 @@
 }
 .pie-chart__content-wrapper .pie-chart__diagram-legend-wrapper {
   display: flex;
-  column-gap: 10px;
+  column-gap: 30px;
   overflow-x: scroll;
-}
-.pie-chart__content-wrapper .pie-chart__diagram-legend-wrapper .pie-chart__diagram {
-  border: 2px solid #000000;
 }
 .pie-chart__content-wrapper .pie-chart__diagram-legend-wrapper .pie-chart__legend-wrapper {
   flex-grow: 1;
-  min-width: 400px;
+  min-width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -486,6 +483,7 @@
 .pie-chart__content-wrapper .pie-chart__diagram-legend-wrapper .pie-chart__legend-wrapper .pie-chart__color-label-wrapper .pie-chart__color-block {
   width: 10px;
   height: 10px;
+  min-width: 10px;
 }
 .pie-chart__content-wrapper .pie-chart__diagram-legend-wrapper .pie-chart__legend-wrapper .pie-chart__color-label-wrapper .pie-chart__color-label {
   padding: 4px;
@@ -494,6 +492,9 @@
   font-size: 18px;
   line-height: 18px;
   color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
 }
 
 .dashboard {
