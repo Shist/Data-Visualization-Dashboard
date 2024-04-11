@@ -1,18 +1,10 @@
 "use strict";
 
 import { getResource } from "../services/json-placeholder.js";
+import getColorsArr from "./colorsGenerator.js";
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
-
-function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
 
 function drawPieChart() {
   const promiseUsers = getResource(USERS_URL);
@@ -48,6 +40,7 @@ function drawPieChart() {
           post.title.includes(postTitleSubstrInput.value) &&
           post.body.includes(postBodySubstrInput.value)
       );
+      const colorsArr = getColorsArr(users.length);
       const chartData = {};
 
       users.forEach((user) => {
@@ -76,7 +69,7 @@ function drawPieChart() {
       Object.values(chartData).forEach(({ name, postsCount }) => {
         const sliceAngle = (postsCount / posts.length) * 2 * Math.PI;
         const endAngle = startAngle + sliceAngle;
-        const newColor = getRandomColor();
+        const newColor = colorsArr.pop();
 
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
