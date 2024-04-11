@@ -49,6 +49,7 @@ function drawPieChart() {
         currUserData.postsCount++;
       });
 
+      const legendWrapper = document.querySelector("#pie-chart-legend-wrapper");
       const canvas = document.querySelector("#pie-chart-diagram");
       const ctx = canvas.getContext("2d");
       const centerX = canvas.width / 2;
@@ -56,21 +57,34 @@ function drawPieChart() {
       const radius = Math.min(canvas.width, canvas.height) / 2;
       let startAngle = 0;
 
+      legendWrapper.innerHTML = "";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+      ctx.closePath();
+      ctx.stroke();
+
       Object.values(chartData).forEach(({ name, postsCount }) => {
         const sliceAngle = (postsCount / posts.length) * 2 * Math.PI;
         const endAngle = startAngle + sliceAngle;
+        const newColor = getRandomColor();
 
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-        ctx.fillStyle = getRandomColor();
+        ctx.fillStyle = newColor;
         ctx.fill();
 
-        // Draw legend
-        // ctx.rect(canvas.width - 100, centerY - 20 - margin, 10, 10);
-        // ctx.fill();
-        // ctx.font = "12px Roboto";
-        // ctx.fillText(count + " posts", canvas.width - 85, centerY - 10 - margin);
+        legendWrapper.insertAdjacentHTML(
+          "beforeend",
+          `<div class="pie-chart__color-label-wrapper">
+              <div
+                class="pie-chart__color-block"
+                style="background-color: ${newColor}"
+              ></div>
+              <span class="pie-chart__color-label">${name}</span>
+            </div>`
+        );
 
         startAngle = endAngle;
       });
