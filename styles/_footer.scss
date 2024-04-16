@@ -2,4 +2,41 @@
 @import "./global/templates";
 
 .app-footer {
+  background-color: $color-bg-dark;
+  &__container {
+    padding: 40px 20px;
+    @media (max-width: $laptop-l) {
+      padding-inline: 20px;
+    }
+    .app-footer__git-link-wrapper {
+      max-width: 280px;
+      margin: 0 auto;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:hover > .app-footer__git-link > .app-footer__git-text {
+        color: $color-link-active;
+      }
+      .app-footer__git-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 5px;
+        text-decoration: none;
+        .app-footer__git-img {
+          width: 30px;
+          height: 30px;
+        }
+        .app-footer__git-text {
+          transition: 0.3s;
+          @include default-text(20px, 20px, $color-white);
+          @media (max-width: $laptop-s) {
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
 }

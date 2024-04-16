@@ -1,0 +1,73 @@
+@import "../global/vars";
+@import "../global/templates";
+
+.pie-chart {
+  padding: 10px;
+  background-color: $color-white;
+  border-radius: 30px;
+  border: 3px solid $color-bg-dark;
+  &__content-wrapper {
+    .pie-chart__headline {
+      @include default-headline(28px, 28px, $color-black);
+      margin-bottom: 10px;
+      @media (max-width: $phone-l) {
+        font-size: 22px;
+        line-height: 22px;
+      }
+    }
+    .pie-chart__headline-sample {
+      @include sample(600px, 44px, 15px);
+      margin-bottom: 10px;
+      @media (max-width: $phone-l) {
+        max-width: 270px;
+        height: 38px;
+      }
+    }
+    .pie-chart__diagram-sample {
+      @include sample(400px, 400px, 100%);
+      min-width: 400px;
+    }
+    .pie-chart__diagram-legend-wrapper {
+      display: flex;
+      column-gap: 30px;
+      overflow-x: scroll;
+      .pie-chart__legend-wrapper {
+        flex-grow: 1;
+        min-width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        overflow-y: scroll;
+        .pie-chart__color-label-wrapper {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+          .pie-chart__color-block {
+            width: 10px;
+            height: 10px;
+            min-width: 10px;
+          }
+          .pie-chart__color-block-sample {
+            @include sample(10px, 10px, 0);
+          }
+          .pie-chart__color-label {
+            @include default-text(18px, 18px, $color-black);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+          }
+          .pie-chart__color-label-sample {
+            @include sample(150px, 26px, 15px);
+            &_small {
+              max-width: 120px;
+            }
+            &_big {
+              max-width: 170px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

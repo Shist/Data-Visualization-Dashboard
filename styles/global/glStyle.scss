@@ -1,7 +1,7 @@
 @import "./vars";
 @import "./templates";
 @import "../header";
-@import "../main";
+@import "../main/main";
 @import "../footer";
 
 // Global container of whole page
@@ -12,4 +12,19 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+}
+
+// This class is needed to hide elements (by adding this class)
+.hidden-element {
+  display: none !important;
+}
+
+// This class is needed to make block elements appear (by adding this class)
+.appeared-block {
+  display: block !important;
+}
+
+// This class is needed to make flex elements appear (by adding this class)
+.appeared-flex {
+  display: flex !important;
 }

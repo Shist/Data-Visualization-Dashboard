@@ -2,4 +2,25 @@
 @import "./global/templates";
 
 .app-header {
+  background-color: $color-bg-dark;
+  &__container {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $laptop-l) {
+      padding-inline: 20px;
+    }
+    .app-header__headline {
+      @include default-headline(45px, 45px, $color-white);
+      @media (max-width: $tablet-l) {
+        font-size: 30px;
+        line-height: 30px;
+      }
+      @media (max-width: $phone-l) {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
 }

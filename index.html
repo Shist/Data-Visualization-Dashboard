@@ -10,9 +10,561 @@
   </head>
   <body>
     <div class="global-container">
-      <header class="app-header"></header>
-      <main class="dashboard"></main>
-      <footer class="app-footer"></footer>
+      <header class="app-header">
+        <div class="app-header__container">
+          <h1 class="app-header__headline">Data Visualization Dashboard</h1>
+        </div>
+      </header>
+      <main class="dashboard">
+        <div class="dashboard__filters-wrapper">
+          <h2 class="dashboard__filters-headline">
+            Filtering options for bar chart
+          </h2>
+          <div class="dashboard__filters-fields-wrapper">
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only users with username containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="bars-filter-input-user-username"
+                id="bars-filter-input-user-username"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only users with email containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="bars-filter-input-user-email"
+                id="bars-filter-input-user-email"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only posts with a title containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="bars-filter-input-post-title"
+                id="bars-filter-input-post-title"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only posts with a body containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="bars-filter-input-post-body"
+                id="bars-filter-input-post-body"
+              />
+            </div>
+          </div>
+          <button
+            class="dashboard__chart-refresh-btn"
+            id="reload-bar-chart-btn"
+          >
+            Reload bar chart
+          </button>
+        </div>
+        <div class="bar-chart bar-chart_mb-30">
+          <div
+            class="bar-chart__content-wrapper"
+            id="bars-samples-content-wrapper"
+          >
+            <div class="bar-chart__headline-sample"></div>
+            <div class="bar-chart__signs-bars-wrapper">
+              <div
+                class="bar-chart__signatures-wrapper bar-chart__signatures-wrapper_sample"
+              >
+                <div class="bar-chart__signatures-values-wrapper">
+                  <span class="bar-chart__signature-value-sample"> </span>
+                  <span class="bar-chart__signature-value-sample"> </span>
+                  <span class="bar-chart__signature-value-sample"></span>
+                </div>
+                <span class="bar-chart__signature-sample"></span>
+              </div>
+              <div class="bar-chart__bars-wrapper">
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div class="bar-chart__bar-sample"></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_six"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_eight"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_eight"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_six"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div class="bar-chart__bar-sample"></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+                <div
+                  class="bar-chart__bar-label-wrapper bar-chart__bar-label-wrapper_sample"
+                >
+                  <div class="bar-chart__bar-wrapper">
+                    <div
+                      class="bar-chart__bar-sample bar-chart__bar-sample_two"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__label-sample"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="error-msg-wrapper hidden-element"
+            id="bars-error-msg-wrapper"
+          >
+            <h2 class="error-msg-wrapper__headline">
+              An error occurred while loading data for the bar chart
+            </h2>
+            <span
+              class="error-msg-wrapper__error-msg"
+              id="bars-error-msg-span"
+            ></span>
+          </div>
+          <div
+            class="bar-chart__content-wrapper hidden-element"
+            id="bars-main-content-wrapper"
+          >
+            <h2 class="bar-chart__headline">Number of posts per user</h2>
+            <div class="bar-chart__signs-bars-wrapper">
+              <div class="bar-chart__signatures-wrapper">
+                <div class="bar-chart__signatures-values-wrapper">
+                  <span
+                    class="bar-chart__signature-value"
+                    id="bars-top-bar-sign"
+                  >
+                    ?
+                  </span>
+                  <span
+                    class="bar-chart__signature-value"
+                    id="bars-middle-bar-sign"
+                  >
+                    ?
+                  </span>
+                  <span class="bar-chart__signature-value">0</span>
+                </div>
+                <span class="bar-chart__signature">Posts count / User</span>
+              </div>
+              <div class="bar-chart__bars-wrapper" id="bars-wrapper"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard__filters-wrapper">
+          <h2 class="dashboard__filters-headline">
+            Filtering options for line chart
+          </h2>
+          <div
+            class="dashboard__filters-fields-wrapper dashboard__filters-fields-wrapper_comments"
+          >
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only comments with email containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="line-chart-filter-input-comment-email"
+                id="line-chart-filter-input-comment-email"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only comments with body containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="line-chart-filter-input-comment-body"
+                id="line-chart-filter-input-comment-body"
+              />
+            </div>
+          </div>
+          <button
+            class="dashboard__chart-refresh-btn"
+            id="reload-line-chart-btn"
+          >
+            Reload pie chart
+          </button>
+        </div>
+        <div class="line-chart line-chart_mb-30">
+          <div
+            class="line-chart__content-wrapper"
+            id="line-chart-samples-content-wrapper"
+          >
+            <div class="line-chart__headline-sample"></div>
+            <div
+              width="1000"
+              height="400"
+              class="line-chart__diagram-sample-wrapper"
+            >
+              <div class="line-chart__diagram-sample-counts-wrapper">
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-count-label-wrapper">
+                  <div class="line-chart__diagram-sample-count-label"></div>
+                </div>
+              </div>
+              <div class="line-chart__diagram-sample-months-wrapper">
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+                <div class="line-chart__diagram-sample-month-label-wrapper">
+                  <div class="line-chart__diagram-sample-month-label"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="error-msg-wrapper hidden-element"
+            id="line-chart-error-msg-wrapper"
+          >
+            <h2 class="error-msg-wrapper__headline">
+              An error occurred while loading data for the line chart
+            </h2>
+            <span
+              class="error-msg-wrapper__error-msg"
+              id="line-chart-error-msg-span"
+            ></span>
+          </div>
+          <div
+            class="line-chart__content-wrapper hidden-element"
+            id="line-chart-main-content-wrapper"
+          >
+            <h2 class="line-chart__headline">Number of comments per month</h2>
+            <canvas
+              width="1000"
+              height="400"
+              class="line-chart__diagram"
+              id="line-chart-graph"
+            ></canvas>
+          </div>
+        </div>
+        <div class="dashboard__filters-wrapper">
+          <h2 class="dashboard__filters-headline">
+            Filtering options for pie chart
+          </h2>
+          <div class="dashboard__filters-fields-wrapper">
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only users with username containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="pie-chart-filter-input-user-username"
+                id="pie-chart-filter-input-user-username"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only users with email containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="pie-chart-filter-input-user-email"
+                id="pie-chart-filter-input-user-email"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only posts with title containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="pie-chart-filter-input-post-title"
+                id="pie-chart-filter-input-post-title"
+              />
+            </div>
+            <div class="dashboard__filters-filter-wrapper">
+              <span class="dashboard__filters-label"
+                >Only posts with body containing:</span
+              >
+              <input
+                type="text"
+                class="dashboard__filters-input"
+                placeholder="Specify some substring here..."
+                name="pie-chart-filter-input-post-body"
+                id="pie-chart-filter-input-post-body"
+              />
+            </div>
+          </div>
+          <button
+            class="dashboard__chart-refresh-btn"
+            id="reload-pie-chart-btn"
+          >
+            Reload pie chart
+          </button>
+        </div>
+        <div class="pie-chart">
+          <div
+            class="pie-chart__content-wrapper"
+            id="pie-chart-samples-content-wrapper"
+          >
+            <div class="pie-chart__headline-sample"></div>
+            <div class="pie-chart__diagram-legend-wrapper">
+              <div
+                width="400"
+                height="400"
+                class="pie-chart__diagram-sample"
+              ></div>
+              <div class="pie-chart__legend-wrapper">
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span
+                    class="pie-chart__color-label-sample pie-chart__color-label-sample_big"
+                  ></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span class="pie-chart__color-label-sample"></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span
+                    class="pie-chart__color-label-sample pie-chart__color-label-sample_big"
+                  ></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span
+                    class="pie-chart__color-label-sample pie-chart__color-label-sample_small"
+                  ></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span class="pie-chart__color-label-sample"></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span class="pie-chart__color-label-sample"></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span
+                    class="pie-chart__color-label-sample pie-chart__color-label-sample_small"
+                  ></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span
+                    class="pie-chart__color-label-sample pie-chart__color-label-sample_big"
+                  ></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span class="pie-chart__color-label-sample"></span>
+                </div>
+                <div class="pie-chart__color-label-wrapper">
+                  <div class="pie-chart__color-block-sample"></div>
+                  <span
+                    class="pie-chart__color-label-sample pie-chart__color-label-sample_small"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="error-msg-wrapper hidden-element"
+            id="pie-chart-error-msg-wrapper"
+          >
+            <h2 class="error-msg-wrapper__headline">
+              An error occurred while loading data for the pie chart
+            </h2>
+            <span
+              class="error-msg-wrapper__error-msg"
+              id="pie-chart-error-msg-span"
+            ></span>
+          </div>
+          <div
+            class="pie-chart__content-wrapper hidden-element"
+            id="pie-chart-main-content-wrapper"
+          >
+            <h2 class="pie-chart__headline">
+              Percentage distribution of posts among users
+            </h2>
+            <div class="pie-chart__diagram-legend-wrapper">
+              <canvas
+                width="400"
+                height="400"
+                class="pie-chart__diagram"
+                id="pie-chart-diagram"
+              ></canvas>
+              <div
+                class="pie-chart__legend-wrapper"
+                id="pie-chart-legend-wrapper"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="app-footer">
+        <div class="app-footer__container">
+          <div class="app-footer__git-link-wrapper">
+            <a
+              href="https://github.com/Shist/Data-Visualization-Dashboard"
+              target="_blank"
+              class="app-footer__git-link"
+            >
+              <img
+                src="./assets/images/github.png"
+                alt="GitHub"
+                class="app-footer__git-img"
+              />
+              <p class="app-footer__git-text">This project on GitHub</p>
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="./scripts/index.js" type="module"></script>
   </body>

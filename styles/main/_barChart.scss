@@ -1,0 +1,117 @@
+@import "../global/vars";
+@import "../global/templates";
+
+.bar-chart {
+  padding: 10px;
+  background-color: $color-white;
+  border-radius: 30px;
+  border: 3px solid $color-bg-dark;
+  &_mb-30 {
+    margin-bottom: 30px;
+  }
+  &__content-wrapper {
+    .bar-chart__headline {
+      @include default-headline(28px, 28px, $color-black);
+      margin-bottom: 10px;
+      @media (max-width: $phone-l) {
+        font-size: 22px;
+        line-height: 22px;
+      }
+    }
+    .bar-chart__headline-sample {
+      @include sample(400px, 44px, 15px);
+      margin-bottom: 10px;
+      @media (max-width: $phone-l) {
+        max-width: 270px;
+        height: 38px;
+      }
+    }
+    .bar-chart__signs-bars-wrapper {
+      display: flex;
+      overflow: scroll;
+      .bar-chart__signatures-wrapper {
+        padding-right: 5px;
+        position: sticky;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: $color-white;
+        &_sample {
+          row-gap: 4px;
+        }
+        .bar-chart__signatures-values-wrapper {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+          .bar-chart__signature-value {
+            font-family: "Roboto";
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+            color: $color-black;
+          }
+          .bar-chart__signature-value-sample {
+            @include sample(23px, 20px, 100%);
+          }
+        }
+        .bar-chart__signature {
+          @include default-text(14px, 14px, $color-black);
+          white-space: nowrap;
+        }
+        .bar-chart__signature-sample {
+          @include sample(124px, 22px, 15px);
+          min-width: 124px;
+        }
+      }
+      .bar-chart__bars-wrapper {
+        height: 300px;
+        display: flex;
+        justify-content: space-evenly;
+        column-gap: 10px;
+        .bar-chart__bar-label-wrapper {
+          width: 70px;
+          min-width: 70px;
+          display: flex;
+          flex-direction: column;
+          &_sample {
+            row-gap: 4px;
+          }
+          .bar-chart__bar-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            .bar-chart__bar {
+              background-color: $color-bar;
+              border: 1px solid $color-black;
+            }
+            .bar-chart__bar-sample {
+              @include sample(70px, 139px, 0);
+              &_two {
+                height: 56px;
+              }
+              &_six {
+                height: 167px;
+              }
+              &_eight {
+                height: 224px;
+              }
+            }
+          }
+          .bar-chart__label {
+            @include default-text(14px, 14px, $color-black);
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .bar-chart__label-sample {
+            @include sample(60px, 22px, 15px);
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
