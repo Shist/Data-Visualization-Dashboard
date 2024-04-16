@@ -2,9 +2,7 @@
 
 import { getResource } from "../services/json-placeholder.js";
 import getColorsArr from "./colorsGenerator.js";
-
-const USERS_URL = "https://jsonplaceholder.typicode.com/users";
-const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+import { USERS_URL, POSTS_URL } from "../constants/urls.js";
 
 function drawPieChart() {
   const promiseUsers = getResource(USERS_URL);
