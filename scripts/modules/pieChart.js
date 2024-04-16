@@ -76,6 +76,10 @@ function drawPieChart() {
       ctx.closePath();
       ctx.stroke();
 
+      if (!Object.values(chartData).length) {
+        return;
+      }
+
       const totalPostsCount = Object.values(chartData)
         .map((userObj) => userObj.postsCount)
         .reduce((prevCount, nextCount) => prevCount + nextCount);
