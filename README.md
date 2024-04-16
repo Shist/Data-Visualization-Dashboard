@@ -4,13 +4,15 @@
 
 ---
 
-### This project receives data using the JSONPlaceholder API, you can see the details of how it works here::
+### This project receives data using the JSONPlaceholder API, you can see the details of how it works here:
 
 ## https://jsonplaceholder.typicode.com/
 
 ---
 
-### This project will be hosted using the Vecel.com platform as soon as all features are transferred to the master branch.
+### This project is hosted using the Vecel.com platform, you can see how it works here:
+
+## https://data-visualization-dashboard-by-shist.vercel.app/
 
 ---
 
