@@ -2,9 +2,7 @@
 
 import { getResource } from "../services/json-placeholder.js";
 import getColorsArr from "./colorsGenerator.js";
-
-const USERS_URL = "https://jsonplaceholder.typicode.com/users";
-const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+import { USERS_URL, POSTS_URL } from "../constants/urls.js";
 
 function drawPieChart() {
   const promiseUsers = getResource(USERS_URL);
@@ -77,6 +75,10 @@ function drawPieChart() {
       ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
       ctx.closePath();
       ctx.stroke();
+
+      if (!Object.values(chartData).length) {
+        return;
+      }
 
       const totalPostsCount = Object.values(chartData)
         .map((userObj) => userObj.postsCount)

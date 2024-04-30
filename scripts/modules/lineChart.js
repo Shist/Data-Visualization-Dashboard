@@ -2,8 +2,7 @@
 
 import { getResource } from "../services/json-placeholder.js";
 import getDatesArr from "./datesGenerator.js";
-
-const COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
+import { COMMENTS_URL } from "../constants/urls.js";
 
 function countCommentsByMonth(comments) {
   const countsPerMonthArr = new Array(12).fill(0);
