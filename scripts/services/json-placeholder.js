@@ -1,3 +1,5 @@
+import { USERS_URL, POSTS_URL, COMMENTS_URL } from "../constants/urls.js";
+
 const getResource = async (url) => {
   const result = await fetch(url);
 
@@ -8,4 +10,15 @@ const getResource = async (url) => {
   return await result.json();
 };
 
-export { getResource };
+function fetchUsersAndPosts() {
+  const promiseUsers = getResource(USERS_URL);
+  const promisePosts = getResource(POSTS_URL);
+
+  return Promise.all([promiseUsers, promisePosts]);
+}
+
+function fetchComments() {
+  return getResource(COMMENTS_URL);
+}
+
+export { fetchUsersAndPosts, fetchComments };

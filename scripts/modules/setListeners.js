@@ -1,8 +1,8 @@
 "use strict";
 
-import drawBarChart from "./barChart.js";
-import drawPieChart from "./pieChart.js";
-import drawLineChart from "./lineChart.js";
+import { drawBarChart } from "./barChart.js";
+import { drawPieChart } from "./pieChart.js";
+import { drawLineChart } from "./lineChart.js";
 
 function setListeners() {
   document
