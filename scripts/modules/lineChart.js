@@ -3,6 +3,8 @@
 import { dataObj } from "../services/json-placeholder.js";
 import getDatesArr from "./datesGenerator.js";
 
+let randomDates = [];
+
 function countCommentsByMonth(comments) {
   const countsPerMonthArr = new Array(12).fill(0);
 
@@ -26,14 +28,17 @@ function drawLineChart() {
       user.email.includes(commentEmailSubstrInput.value) &&
       user.body.includes(commentBodySubstrInput.value)
   );
-  const randomDatesArr = getDatesArr(
-    comments.length,
-    new Date("2023-04-01"),
-    new Date("2024-04-01")
-  );
+
+  if (!randomDates.length) {
+    randomDates = getDatesArr(
+      comments.length,
+      new Date("2023-04-01"),
+      new Date("2024-04-01")
+    );
+  }
 
   comments.forEach((comment, index) => {
-    comment.date = randomDatesArr[index];
+    comment.date = randomDates[index];
   });
 
   const commentCounts = countCommentsByMonth(comments);
