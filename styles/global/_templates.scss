@@ -58,6 +58,10 @@
     transform: scale(1.1);
     color: $color-link-active;
   }
+  @media (max-width: $phone-l) {
+    font-size: 18px;
+    line-height: 18px;
+  }
 }
 
 // Simple pulse animation for @sample mixin
