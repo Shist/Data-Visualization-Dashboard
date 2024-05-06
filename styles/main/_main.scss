@@ -56,9 +56,19 @@
         }
       }
     }
-    .dashboard__chart-refresh-btn {
+    .dashboard__chart-refresh-btn-icon-wrapper {
       margin-left: 10px;
-      @include default-btn(300px, $color-white, $color-bg-dark);
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      .dashboard__chart-refresh-btn {
+        @include default-btn(300px, $color-white, $color-bg-dark);
+      }
+      .dashboard__chart-refresh-icon {
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+      }
     }
   }
 }
