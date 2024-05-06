@@ -1,5 +1,10 @@
 import { USERS_URL, POSTS_URL, COMMENTS_URL } from "../constants/urls.js";
 
+const dataObj = {
+  usersAndPosts: [],
+  comments: [],
+};
+
 const getResource = async (url) => {
   const result = await fetch(url);
 
@@ -21,4 +26,4 @@ function fetchComments() {
   return getResource(COMMENTS_URL);
 }
 
-export { fetchUsersAndPosts, fetchComments };
+export { dataObj, fetchUsersAndPosts, fetchComments };

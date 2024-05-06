@@ -1,8 +1,9 @@
 "use strict";
 
+import { dataObj } from "../services/json-placeholder.js";
 import getColorsArr from "./colorsGenerator.js";
 
-function drawPieChart(dataArr) {
+function drawPieChart() {
   const userUsernameSubstrInput = document.querySelector(
     "#pie-chart-filter-input-user-username"
   );
@@ -15,12 +16,12 @@ function drawPieChart(dataArr) {
   const postBodySubstrInput = document.querySelector(
     "#pie-chart-filter-input-post-body"
   );
-  const users = dataArr[0].filter(
+  const users = dataObj.usersAndPosts[0].filter(
     (user) =>
       user.username.includes(userUsernameSubstrInput.value) &&
       user.email.includes(userEmailSubstrInput.value)
   );
-  const posts = dataArr[1].filter(
+  const posts = dataObj.usersAndPosts[1].filter(
     (post) =>
       post.title.includes(postTitleSubstrInput.value) &&
       post.body.includes(postBodySubstrInput.value)
@@ -107,7 +108,8 @@ function handlePieChartData(pUsersAndPosts) {
       mainWrapper.classList.remove("hidden-element");
       mainWrapper.classList.add("appeared-block");
 
-      drawPieChart(dataArr);
+      dataObj.usersAndPosts = dataArr;
+      drawPieChart();
     })
     .catch((e) => {
       errorMsgWrapper.classList.remove("hidden-element");
@@ -121,4 +123,4 @@ function handlePieChartData(pUsersAndPosts) {
     });
 }
 
-export { handlePieChartData, drawPieChart };
+export { drawPieChart, handlePieChartData };

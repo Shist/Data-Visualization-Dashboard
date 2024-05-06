@@ -1,6 +1,8 @@
 "use strict";
 
-function drawBarChart(dataArr) {
+import { dataObj } from "../services/json-placeholder.js";
+
+function drawBarChart() {
   const container = document.querySelector("#bars-wrapper");
   const topBarSign = document.querySelector("#bars-top-bar-sign");
   const middleBarSign = document.querySelector("#bars-middle-bar-sign");
@@ -16,12 +18,12 @@ function drawBarChart(dataArr) {
   const postBodySubstrInput = document.querySelector(
     "#bars-filter-input-post-body"
   );
-  const users = dataArr[0].filter(
+  const users = dataObj.usersAndPosts[0].filter(
     (user) =>
       user.username.includes(userUsernameSubstrInput.value) &&
       user.email.includes(userEmailSubstrInput.value)
   );
-  const posts = dataArr[1].filter(
+  const posts = dataObj.usersAndPosts[1].filter(
     (post) =>
       post.title.includes(postTitleSubstrInput.value) &&
       post.body.includes(postBodySubstrInput.value)
@@ -79,7 +81,8 @@ function handleBarChartData(pUsersAndPosts) {
       mainWrapper.classList.remove("hidden-element");
       mainWrapper.classList.add("appeared-block");
 
-      drawBarChart(dataArr);
+      dataObj.usersAndPosts = dataArr;
+      drawBarChart();
     })
     .catch((e) => {
       errorMsgWrapper.classList.remove("hidden-element");
@@ -92,4 +95,4 @@ function handleBarChartData(pUsersAndPosts) {
     });
 }
 
-export { handleBarChartData, drawBarChart };
+export { drawBarChart, handleBarChartData };

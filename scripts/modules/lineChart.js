@@ -1,5 +1,6 @@
 "use strict";
 
+import { dataObj } from "../services/json-placeholder.js";
 import getDatesArr from "./datesGenerator.js";
 
 function countCommentsByMonth(comments) {
@@ -13,14 +14,14 @@ function countCommentsByMonth(comments) {
   return countsPerMonthArr;
 }
 
-function drawLineChart(commentsArr) {
+function drawLineChart() {
   const commentEmailSubstrInput = document.querySelector(
     "#line-chart-filter-input-comment-email"
   );
   const commentBodySubstrInput = document.querySelector(
     "#line-chart-filter-input-comment-body"
   );
-  const comments = commentsArr.filter(
+  const comments = dataObj.comments.filter(
     (user) =>
       user.email.includes(commentEmailSubstrInput.value) &&
       user.body.includes(commentBodySubstrInput.value)
@@ -127,7 +128,8 @@ function handleLineChartData(pComments) {
       mainWrapper.classList.remove("hidden-element");
       mainWrapper.classList.add("appeared-block");
 
-      drawLineChart(allComments);
+      dataObj.comments = allComments;
+      drawLineChart();
     })
     .catch((e) => {
       errorMsgWrapper.classList.remove("hidden-element");
@@ -141,4 +143,4 @@ function handleLineChartData(pComments) {
     });
 }
 
-export { handleLineChartData, drawLineChart };
+export { drawLineChart, handleLineChartData };

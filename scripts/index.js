@@ -6,8 +6,8 @@ import {
   fetchComments,
 } from "./services/json-placeholder.js";
 import { handleBarChartData } from "./modules/barChart.js";
-import { handleLineChartData } from "./modules/pieChart.js";
-import { handlePieChartData } from "./modules/lineChart.js";
+import { handleLineChartData } from "./modules/lineChart.js";
+import { handlePieChartData } from "./modules/pieChart.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   setListeners();
